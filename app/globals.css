@@ -1,26 +1,46 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+
+  body {
+    @apply bg-[#070707] text-zinc-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-zinc-700/30;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .external-link {
+    @apply inline-flex items-center tracking-tight hover:text-white transition-colors text-base;
+  }
+  
+  .external-link span {
+    @apply border-b border-zinc-800 hover:border-zinc-600;
+  }
 }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .content-spacing > * + * {
+    @apply mt-6;
+  }
+  
+  .content-spacing > h2 {
+    @apply mt-12;
+  }
+} 
