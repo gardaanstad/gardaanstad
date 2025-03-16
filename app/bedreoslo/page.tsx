@@ -8,8 +8,8 @@ export default function BedreOsloPage() {
           nettside om byutvikling i oslo. kort oppsummert jobber vi for flere boliger, tryggere gater og bedre kollektivt.
           <span className="inline-flex items-center ml-2">
             <a 
-              href="https://github.com/gardaanstad/lille-norske-sprakmodell" 
-              target="_blank" 
+              href="https://bedreoslo.no" 
+              target="_blank"
               rel="noopener noreferrer"
               className="border-b border-white md:border-zinc-800 md:hover:border-zinc-600 md:hover:text-white md:transition-colors"
             >
