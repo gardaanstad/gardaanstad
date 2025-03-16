@@ -5,7 +5,7 @@ export default function BedreOsloPage() {
     <article className="content-spacing">
       <h1 className="text-3xl font-semibold mb-4">nettsiden til bedre oslo</h1>
 
-      <p className="text-balance">
+      <p>
         nettside om byutvikling i oslo. kort oppsummert jobber vi for flere boliger, tryggere gater og bedre kollektivt.
         <InlineLink 
           href="https://bedreoslo.no" 

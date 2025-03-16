@@ -68,9 +68,3 @@
     @apply font-medium text-sm tracking-tight;
   }
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: pretty;
-  }
-} 
