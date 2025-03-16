@@ -31,7 +31,7 @@ export default function Home() {
               className="font-medium"
               prefetch={true}
             >
-              bedreoslo.no
+              nettsiden til bedreoslo
             </Link>
             <p className="mt-1">
               en nettside for organisasjonen bedre oslo. next.js react & tailwind css.

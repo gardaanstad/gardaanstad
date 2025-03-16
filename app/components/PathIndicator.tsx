@@ -29,7 +29,7 @@ export const PathIndicator = React.memo(function PathIndicator() {
   return (
     <>
       {/* Mobile version */}
-      <div className="md:hidden path-indicator-mobile">
+      <div className="md:hidden font-medium text-sm tracking-tight fixed bottom-6 left-0 right-0">
         <div className="absolute inset-x-0 top-0 bottom-[-100vh] bg-zinc-900/70 backdrop-blur-md"></div>
         <div className="relative px-4 py-2">
           <div className="max-w-[65ch] mx-auto">
@@ -39,7 +39,7 @@ export const PathIndicator = React.memo(function PathIndicator() {
       </div>
       
       {/* Desktop version */}
-      <div className="hidden md:block path-indicator-desktop">
+      <div className="hidden md:block font-medium text-sm tracking-tight">
         {renderPathLinks('desktop')}
       </div>
     </>
