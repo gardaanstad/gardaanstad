@@ -1,61 +1,47 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export function PathIndicator() {
-  // Get pathname directly
+export const PathIndicator = React.memo(function PathIndicator() {
   const pathname = usePathname() || '';
-  
-  // Process segments - this is safe as long as we're consistent
   const segments = pathname === '/' ? [] : pathname.split('/').filter(Boolean);
   
-  // Use a single consistent class for both mobile and desktop
-  // This ensures hydration matching
-  const linkClasses = "border-b border-white md:border-zinc-800 md:hover:border-zinc-600 md:hover:text-white md:transition-colors";
+  const renderPathLinks = (keyPrefix: string) => (
+    <>
+      <span className="text-zinc-500">. / </span>
+      <Link href="/" className="path-link">home</Link>
+      {segments.map((segment, index) => (
+        <span key={`${keyPrefix}-${segment}-${index}`}>
+          <span className="text-zinc-500"> / </span>
+          <Link 
+            href={`/${segments.slice(0, index + 1).join('/')}`} 
+            className="path-link"
+          >
+            {segment}
+          </Link>
+        </span>
+      ))}
+    </>
+  );
   
   return (
     <>
-      {/* Mobile version - simplified */}
-      <div className="md:hidden font-medium text-sm tracking-tight fixed bottom-6 left-0 right-0 z-10">
+      {/* Mobile version */}
+      <div className="md:hidden path-indicator-mobile">
         <div className="absolute inset-x-0 top-0 bottom-[-100vh] bg-zinc-900/70 backdrop-blur-md"></div>
         <div className="relative px-4 py-2">
           <div className="max-w-[65ch] mx-auto">
-            <span className="text-zinc-500">. / </span>
-            <Link href="/" className={linkClasses} prefetch={true}>home</Link>
-            {segments.map((segment, index) => (
-              <span key={`mobile-${segment}-${index}`}>
-                <span className="text-zinc-500"> / </span>
-                <Link 
-                  href={`/${segments.slice(0, index + 1).join('/')}`} 
-                  className={linkClasses}
-                  prefetch={true}
-                >
-                  {segment}
-                </Link>
-              </span>
-            ))}
+            {renderPathLinks('mobile')}
           </div>
         </div>
       </div>
       
-      {/* Desktop version - simplified */}
-      <div className="hidden md:block font-medium text-sm tracking-tight">
-        <span className="text-zinc-500">. / </span>
-        <Link href="/" className={linkClasses} prefetch={true}>home</Link>
-        {segments.map((segment, index) => (
-          <span key={`desktop-${segment}-${index}`}>
-            <span className="text-zinc-500"> / </span>
-            <Link 
-              href={`/${segments.slice(0, index + 1).join('/')}`} 
-              className={linkClasses}
-              prefetch={true}
-            >
-              {segment}
-            </Link>
-          </span>
-        ))}
+      {/* Desktop version */}
+      <div className="hidden md:block path-indicator-desktop">
+        {renderPathLinks('desktop')}
       </div>
     </>
   );
-} 
+}); 

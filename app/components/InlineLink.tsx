@@ -17,7 +17,8 @@ export default function InlineLink({
   rel = "noopener noreferrer" 
 }: InlineLinkProps) {
   return (
-    <span className="inline-flex items-center ml-2">
+    <span className="whitespace-normal">
+      {" "}
       <Link 
         href={href} 
         target={target}
@@ -26,7 +27,11 @@ export default function InlineLink({
       >
         {text}
       </Link>
-      {icon && <span className="ml-2">{icon}</span>}
+      {icon && (
+        <span className="inline-flex align-middle ml-1">
+          {icon}
+        </span>
+      )}
     </span>
   );
 }

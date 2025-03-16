@@ -39,7 +39,7 @@
   }
 
   a {
-    @apply border-b border-white md:border-zinc-800 md:hover:border-zinc-600 md:hover:text-white md:transition-colors;
+    @apply border-b border-white md:border-zinc-700 md:hover:border-white md:hover:text-white md:transition-colors;
   }
 
   ul {
@@ -54,6 +54,18 @@
   
   .external-link span {
     @apply border-b border-zinc-800 hover:border-zinc-600;
+  }
+  
+  .path-link {
+    @apply hover:text-white transition-colors;
+  }
+  
+  .path-indicator-mobile {
+    @apply font-medium text-sm tracking-tight fixed bottom-6 left-0 right-0 z-10;
+  }
+  
+  .path-indicator-desktop {
+    @apply font-medium text-sm tracking-tight;
   }
 }
 

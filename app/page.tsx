@@ -33,7 +33,7 @@ export default function Home() {
             bedreoslo.no
           </Link>
           <p className="mt-1">
-            en nettside for organisasjonen bedre oslo. next.js react, tailwind css, vercel.
+            en nettside for organisasjonen bedre oslo. next.js react & tailwind css.
           </p>
         </li>
       </ul>
