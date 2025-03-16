@@ -21,6 +21,30 @@
     font-weight: 600;
     line-height: 1.2;
   }
+
+  h1 {
+    @apply text-3xl font-semibold;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply text-base text-balance;
+  }
+
+  a {
+    @apply border-b border-white md:border-zinc-800 md:hover:border-zinc-600 md:hover:text-white md:transition-colors;
+  }
+
+  ul {
+    @apply space-y-2 list-disc pl-5;
+  }
 }
 
 @layer components {
@@ -35,15 +59,6 @@
 
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
-    min-height: 1.5em;
-  }
-  
-  .content-spacing > * + * {
-    @apply mt-6;
-  }
-  
-  .content-spacing > h2 {
-    @apply mt-12;
+    text-wrap: pretty;
   }
 } 
