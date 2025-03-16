@@ -10,6 +10,7 @@
 
   body {
     @apply bg-[#070707] text-zinc-100 antialiased;
+    min-height: 100vh;
   }
 
   ::selection {
@@ -18,6 +19,7 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
+    line-height: 1.2;
   }
 }
 
@@ -34,6 +36,7 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+    min-height: 1.5em;
   }
   
   .content-spacing > * + * {

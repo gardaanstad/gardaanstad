@@ -16,19 +16,20 @@ export function PathIndicator() {
   
   return (
     <>
-      {/* Mobile version */}
+      {/* Mobile version - simplified */}
       <div className="md:hidden font-medium text-sm tracking-tight fixed bottom-6 left-0 right-0 z-10">
         <div className="absolute inset-x-0 top-0 bottom-[-100vh] bg-zinc-900/70 backdrop-blur-md"></div>
         <div className="relative px-4 py-2">
           <div className="max-w-[65ch] mx-auto">
             <span className="text-zinc-500">. / </span>
-            <Link href="/" className={linkClasses}>home</Link>
-            {segments.length > 0 && segments.map((segment, index) => (
-              <span key={index}>
+            <Link href="/" className={linkClasses} prefetch={true}>home</Link>
+            {segments.map((segment, index) => (
+              <span key={`mobile-${segment}-${index}`}>
                 <span className="text-zinc-500"> / </span>
                 <Link 
                   href={`/${segments.slice(0, index + 1).join('/')}`} 
                   className={linkClasses}
+                  prefetch={true}
                 >
                   {segment}
                 </Link>
@@ -38,16 +39,17 @@ export function PathIndicator() {
         </div>
       </div>
       
-      {/* Desktop version */}
+      {/* Desktop version - simplified */}
       <div className="hidden md:block font-medium text-sm tracking-tight">
         <span className="text-zinc-500">. / </span>
-        <Link href="/" className={linkClasses}>home</Link>
-        {segments.length > 0 && segments.map((segment, index) => (
-          <span key={index}>
+        <Link href="/" className={linkClasses} prefetch={true}>home</Link>
+        {segments.map((segment, index) => (
+          <span key={`desktop-${segment}-${index}`}>
             <span className="text-zinc-500"> / </span>
             <Link 
               href={`/${segments.slice(0, index + 1).join('/')}`} 
               className={linkClasses}
+              prefetch={true}
             >
               {segment}
             </Link>
