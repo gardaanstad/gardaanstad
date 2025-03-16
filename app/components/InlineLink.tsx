@@ -23,7 +23,7 @@ export default function InlineLink({
         href={href} 
         target={target}
         rel={rel}
-        className="border-b border-white md:border-zinc-800 md:hover:border-zinc-600 md:hover:text-white md:transition-colors"
+        /* link styling (a) is in globals.css */
       >
         {text}
       </Link>
