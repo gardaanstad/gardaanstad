@@ -87,7 +87,7 @@ export default function Home() {
         </p>
 
         <p className="mt-3">
-          jeg driver også <Link href="https://www.bedreoslo.no" className="font-medium" target="_blank" rel="noopener noreferrer">bedre oslo</Link>!
+          jeg driver også <InlineLink href="https://www.bedreoslo.no" text="bedre oslo" />!
         </p>
       </div>
     </article>
