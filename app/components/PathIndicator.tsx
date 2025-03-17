@@ -8,23 +8,34 @@ export const PathIndicator = React.memo(function PathIndicator() {
   const pathname = usePathname() || '';
   const segments = pathname === '/' ? [] : pathname.split('/').filter(Boolean);
   
-  const renderPathLinks = (keyPrefix: string) => (
-    <>
-      <span className="text-zinc-500">. / </span>
-      <Link href="/" className="path-link">home</Link>
-      {segments.map((segment, index) => (
-        <span key={`${keyPrefix}-${segment}-${index}`}>
-          <span className="text-zinc-500"> / </span>
-          <Link 
-            href={`/${segments.slice(0, index + 1).join('/')}`} 
-            className="path-link"
-          >
-            {segment}
-          </Link>
-        </span>
-      ))}
-    </>
-  );
+  const renderPathLinks = (keyPrefix: string) => {
+    if (pathname === '/root') {
+      return (
+        <>
+          <Link href="/root" className="text-zinc-500 border-b-0">.</Link>
+        </>
+      );
+    }
+
+    return (
+      <>
+        <Link href="/root" className="text-zinc-500 border-b-0">.</Link>
+        <span className="text-zinc-500"> / </span>
+        <Link href="/" className="path-link">home</Link>
+        {segments.map((segment, index) => (
+          <span key={`${keyPrefix}-${segment}-${index}`}>
+            <span className="text-zinc-500"> / </span>
+            <Link 
+              href={`/${segments.slice(0, index + 1).join('/')}`} 
+              className="path-link"
+            >
+              {segment}
+            </Link>
+          </span>
+        ))}
+      </>
+    );
+  };
   
   return (
     <>

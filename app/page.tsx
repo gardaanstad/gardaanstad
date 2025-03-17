@@ -6,7 +6,7 @@ export default function Home() {
     <article className="content-spacing">
       <h1 className="mb-4">gard aanstad</h1>
       
-      <p className="">
+      <p>
         21 år gammel student ved uio. liker maskinlæring og byutvikling.
       </p>
 
@@ -78,6 +78,17 @@ export default function Home() {
             />
           </li>
         </ul>
+      </div>
+
+      <div className="mt-12">
+        <h2 className="mb-3">om meg</h2>
+        <p>
+          jeg går tredje året på bachelor i informatikk: språkteknologi på uio (språkteknologi handler egentlig om generell maskinlæring og KI, ikke kun språk). jeg er også interessert i byutvikling (sjekk bluesky-en min!) og jobber med hvordan vi kan bruke maskinlæring til å forbedre byene våre. 
+        </p>
+
+        <p className="mt-3">
+          jeg driver også <Link href="https://www.bedreoslo.no" className="font-medium">bedre oslo</Link>!
+        </p>
       </div>
     </article>
   );

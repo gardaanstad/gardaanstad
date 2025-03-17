@@ -6,7 +6,7 @@ export default function LilleNorskeSprakmodellPage() {
       <h1 className="mb-4">lille norske språkmodell</h1>
       
       <p>
-        et prosjekt for å lage en enkel språkmodell for norsk tekst, bygget med pytorch.
+        lagde en enkel språkmodell fra bunnen av.
         <InlineLink
           href="https://github.com/gardaanstad/lille-norske-sprakmodell"
           text="se prosjektet på github"
@@ -18,13 +18,14 @@ export default function LilleNorskeSprakmodellPage() {
         />
       </p>
       
-      <h2 className="mt-6">hvorfor?</h2>
-      <p className="mt-3">
-        språkmodellen er basert på gpt-2 arkitekturen. målet var å skjønne hvordan transformer-arkitekturen fungerer, og hvordan man kan lage en enkel språkmodell. man kan trene den på hva som helst, men det er gøy å trene den på diverse norske datasett. eksempel på bruk er på github!
+      <h2 className="mt-6 mb-2">hvorfor?</h2>
+      <p>
+        målet var å skjønne hvordan den populære transformer-arkitekturen fungerer i detalj. man kan trene modellen jeg har laget på hva som helst. eksempel på bruk ligger på github!
       </p>
       
       <h2 className="mt-6">laget med</h2>
       <ul className="mt-2">
+        <li>gpt-2 arkitektur</li>
         <li>python</li>
         <li>pytorch</li>
       </ul>
