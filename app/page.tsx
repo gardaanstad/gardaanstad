@@ -7,7 +7,7 @@ export default function Home() {
       <h1 className="mb-4">gard aanstad</h1>
       
       <p>
-        21 år gammel student ved uio. liker maskinlæring og byutvikling.
+        22 år gammel student ved uio. liker maskinlæring og byutvikling.
       </p>
 
       <div className="mt-12">
