@@ -83,7 +83,7 @@ export default function Home() {
       <div className="mt-12">
         <h2 className="mb-3">om meg</h2>
         <p>
-          jeg går tredje året på bachelor i informatikk: språkteknologi på uio (språkteknologi handler egentlig om generell maskinlæring og KI, ikke kun språk). jeg er også interessert i byutvikling (sjekk bluesky-en min!) og jobber med hvordan vi kan bruke maskinlæring til å forbedre byene våre. 
+          jeg tar en mastergrad innen informatikk: språkteknologi på uio (språkteknologi handler egentlig om generell maskinlæring og KI, ikke kun språk). jeg er også interessert i byutvikling (sjekk bluesky-en min!), klima og formel 1.
         </p>
 
         <p className="mt-3">
